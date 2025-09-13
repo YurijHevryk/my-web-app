@@ -4,7 +4,6 @@ import json
 import mysql.connector
 from database import get_db_connection
 
-# Створюємо Blueprint для наших маршрутів
 bp = Blueprint('api', __name__, url_prefix='/api')
 
 

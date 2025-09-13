@@ -21,21 +21,18 @@ main {
     border: 1px solid rgba(64, 64, 64, 0.3);
 }
 
-/* Вужча форма тільки для секції авторизації */
 #auth-section {
-    max-width: 400px; /* Зменшено з 100% до 400px */
+    max-width: 400px;
     margin: 0 auto;
 }
 
-/* Додаткове звуження для форм входу та реєстрації */
 #register-form-container,
 #login-form-container {
-    max-width: 350px; /* Зменшено з 100% до 350px */
+    max-width: 350px;
     margin: 0 auto;
     padding: 0;
 }
 
-/* Зменшення відступів у формах авторизації */
 #auth-section form {
     gap: 15px;
 }
@@ -50,7 +47,6 @@ main {
     font-size: 14px;
 }
 
-/* Для основного додатку повна ширина */
 #main-app-section {
     width: 100%;
 }
@@ -159,7 +155,6 @@ a {
     text-shadow: 0 0 5px rgba(255, 102, 102, 0.3);
 }
 
-/* Main app section styles */
 header {
     display: flex;
     justify-content: space-between;

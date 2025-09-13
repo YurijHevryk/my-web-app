@@ -2,13 +2,11 @@ import mysql.connector
 import os
 import bcrypt
 
-# Налаштування з'єднання з БД
 DB_HOST = os.environ.get("DB_HOST", "localhost")
 DB_USER = os.environ.get("DB_USER", "root")
 DB_PASSWORD = os.environ.get("DB_PASSWORD", "1234")
 DB_NAME = os.environ.get("DB_NAME", "my_app_db")
 
-# Список з 30 фільмів із справжніми постерами з TMDB
 MOVIES_DATA = [
     {"title": "Inception", "year": 2010, "status": "all",
      "image_url": "https://image.tmdb.org/t/p/w300/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
@@ -226,7 +224,6 @@ MOVIES_DATA = [
 
 
 def get_db_connection():
-    """Створює та повертає об'єкт з'єднання з базою даних."""
     try:
         connection = mysql.connector.connect(
             host=DB_HOST,
@@ -241,7 +238,6 @@ def get_db_connection():
 
 
 def create_tables_and_populate_movies():
-    """Створює таблиці 'users' і 'movies', якщо вони не існують, та заповнює таблицю фільмів."""
     connection = get_db_connection()
     if connection is None:
         print("Failed to create tables, database connection failed.")
@@ -250,7 +246,6 @@ def create_tables_and_populate_movies():
     cursor = connection.cursor()
 
     try:
-        # Створюємо таблицю користувачів
         cursor.execute("""
                        CREATE TABLE IF NOT EXISTS users
                        (
@@ -296,7 +291,6 @@ def create_tables_and_populate_movies():
                        """)
         connection.commit()
 
-        # Заповнюємо таблицю фільмів, якщо вона порожня
         cursor.execute("SELECT COUNT(*) FROM movies")
         if cursor.fetchone()[0] == 0:
             print("Adding dummy movie data...")
@@ -315,7 +309,6 @@ def create_tables_and_populate_movies():
 
 
 def save_new_user(username, password_hash):
-    """Зберігає нового користувача в базі даних."""
     connection = get_db_connection()
     if connection is None:
         return False
