@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main>
+        <div id="auth-section">
+            <div id="register-form-container">
+                <h2>Registration</h2>
+                <form id="register-form" autocomplete="off">
+                    <input type="text" id="reg-username" placeholder="Enter username" required autocomplete="off">
+                    <input type="password" id="reg-password" placeholder="Enter password" required autocomplete="new-password">
+                    <button type="submit">Register</button>
+                    <p id="reg-message"></p>
+                </form>
+                <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
+            </div>
+
+            <div id="login-form-container" style="display: none;">
+                <h2>Authorization</h2>
+                <form id="login-form" autocomplete="off">
+                    <input type="text" id="log-username" placeholder="Enter username" required autocomplete="off">
+                    <input type="password" id="log-password" placeholder="Enter password" required autocomplete="new-password">
+                    <button type="submit">Log In</button>
+                    <p id="log-message"></p>
+                </form>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </div>
+        </div>
+
+        <div id="main-app-section" style="display: none;">
+            <header>
+                <nav>
+                    <button id="all-movies-btn">All Movies</button>
+                    <button id="watchlist-btn">Watchlist</button>
+                    <button id="watched-btn">Watched</button>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search movies...">
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </header>
+            <div id="movie-list-container">
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+
+# IDE-specific files
+.idea/
+.vs/
+*.vscode/
+
+# Other temporary files
+*.pyc
+*.pyo
+.DS_Store
+
+# Docker
+.dockerignore
+
+# Database
+*.db
